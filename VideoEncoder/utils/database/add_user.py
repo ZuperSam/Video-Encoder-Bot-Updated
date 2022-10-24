@@ -27,5 +27,5 @@ async def AddUserToDatabase(bot: Client, cmd: Message):
         if log is not None:
             await bot.send_message(
                 int(log),
-                f"<b>New User</b> \n\n<a href=f'tg://user?id={cmd.from_user.id}'>{cmd.from_user.first_name}</a> started @{(await bot.get_me()).username}!!"
+                f"<b>New User</b> \n\n<a href=f'tg://user?id={cmd.from_user.id}'>{cmd.from_user.mention}</a> started @{(await bot.get_me()).username}!!"
             )
