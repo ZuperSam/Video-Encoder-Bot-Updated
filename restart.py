@@ -24,7 +24,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     handlers=[logging.FileHandler('log.txt'), logging.StreamHandler()],
                     level=logging.INFO)
 
-UPSTREAM_REPO = 'https://github.com/WeebTime/Video-Encoder-Bot'
+UPSTREAM_REPO = 'https://github.com/Kirito99-7/Video-Encoder-Bot'
 UPSTREAM_BRANCH = 'beta'
 
 if UPSTREAM_REPO is not None:
@@ -32,6 +32,8 @@ if UPSTREAM_REPO is not None:
         srun(["rm", "-rf", ".git"])
 
     update = srun([f"git init -q \
+                     && git config --global user.name Kirito99-7 \
+                     && git config --global user.email akashkumar123a.n@gmail.com
                      && git add . \
                      && git commit -sm update -q \
                      && git remote add origin {UPSTREAM_REPO} \
