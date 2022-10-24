@@ -187,7 +187,7 @@ async def encode(filepath, message, msg):
     # Metadata Watermark
     m = await db.get_metadata_w(message.from_user.id)
     if m:
-        metadata = '-metadata title=Weeb-Zone.Blogspot.com -metadata:s:v title=Weeb-Zone.Blogspot.com -metadata:s:a title=Weeb-Zone.Blogspot.com'
+        metadata = '-metadata title=t.me/YUITOAKASH -metadata:s:v title=Weeb-Zone.Blogspot.com -metadata:s:a title=Weeb-Zone.Blogspot.com'
     else:
         metadata = ''
 
@@ -209,7 +209,7 @@ async def encode(filepath, message, msg):
 
 #    ffmpeg_filter = ':'.join([
 #        'drawtext=fontfile=/app/bot/utils/watermark/font.ttf',
-#        f"text='Weeb-Zone.Blogspot.com'",
+#        f"text='t.me/YUITOAKASH'",
 #        f'fontcolor=white',
 #        'fontsize=main_h/20',
 #        f'x=40:y=40'
@@ -445,9 +445,9 @@ async def handle_progress(proc, msg, message, filepath):
             percentage = math.floor(elapsed_time * 100 / total_time)
             progress_str = "<b>Encoding Video:</b> {0}%\n{1}{2}".format(
                 round(percentage, 2),
-                ''.join(['█' for i in range(
+                ''.join(['✅' for i in range(
                     math.floor(percentage / 10))]),
-                ''.join(['░' for i in range(
+                ''.join(['❌' for i in range(
                     10 - math.floor(percentage / 10))])
             )
             stats = f'{progress_str} \n' \
