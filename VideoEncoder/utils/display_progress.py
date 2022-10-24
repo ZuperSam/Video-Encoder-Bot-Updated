@@ -33,8 +33,8 @@ async def progress_for_pyrogram(current, total, ud_type, message, start):
         elapsed_time = TimeFormatter(seconds=elapsed_time)
         estimated_total_time = TimeFormatter(seconds=estimated_total_time)
         progress = "{0}{1}".format(
-            ''.join(["█" for i in range(math.floor(percentage / 10))]),
-            ''.join(["░" for i in range(10 - math.floor(percentage / 10))])
+            ''.join(["●" for i in range(math.floor(percentage / 10))]),
+            ''.join(["○" for i in range(10 - math.floor(percentage / 10))])
         )
         tmp = progress + PROGRESS.format(
             humanbytes(current),
@@ -58,8 +58,8 @@ async def progress_for_url(downloader, msg):
     estimated_total_time = downloader.get_eta(human=True)
     percentage = downloader.get_progress() * 100
     progress = "{0}{1}".format(
-        ''.join(["█" for i in range(math.floor(percentage / 10))]),
-        ''.join(["░" for i in range(10 - math.floor(percentage / 10))])
+        ''.join(["✅" for i in range(math.floor(percentage / 10))]),
+        ''.join(["❌" for i in range(10 - math.floor(percentage / 10))])
     )
     progress_str = "Downloading\n" + progress + PROGRESS.format(
         humanbytes(downloaded),
