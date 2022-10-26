@@ -197,7 +197,7 @@ async def settings_viewer(bot: Client, event: Message):
     
     m = await db.get_metadata_w(user_id)
     if m:
-        metadata = 'Weeb-Zone'
+        metadata = 't.me/YUITOAKASH'
     else:
         metadata = 'change session!'
     
@@ -205,27 +205,27 @@ async def settings_viewer(bot: Client, event: Message):
     vset = f'''<b>Encode Settings:</b>
 
 <b>📹 Video Settings</b>
-Format : {extensions}
-Quality: {res}
-Codec: {'H265' if ((await db.get_hevc(user_id)) is True) else 'H264'}
-Aspect: {'16:9' if ((await db.get_aspect(user_id)) is True) else 'Source'}
-Reframe: {reframe} | FPS: {frame}
-Tune: {'Animation' if ((await db.get_tune(user_id)) is True) else 'Film'}
-Preset: {pre}
-Bits: {'10' if ((await db.get_bits(user_id)) is True) else '8'} | CRF: {crf}
-CABAC: {'☑️' if ((await db.get_cabac(user_id)) is True) else ''}
+🎛 Format : {extensions}
+🎛 Quality: {res}
+🎛 Codec: {'H265' if ((await db.get_hevc(user_id)) is True) else 'H264'}
+🎛 Aspect: {'16:9' if ((await db.get_aspect(user_id)) is True) else 'Source'}
+🎛 Reframe: {reframe} | FPS: {frame}
+🎛 Tune: {'Animation' if ((await db.get_tune(user_id)) is True) else 'Film'}
+🎛 Preset: {pre}
+🎛 Bits: {'10' if ((await db.get_bits(user_id)) is True) else '8'} | CRF: {crf}
+🎛 CABAC: {'☑️' if ((await db.get_cabac(user_id)) is True) else ''}
 
 <b>📜 Subtitles Settings</b>
-Hardsub {'☑️' if ((await db.get_hardsub(user_id)) is True) else ''} | Softsub {'☑️' if ((await db.get_subtitles(user_id)) is True) else ''}
+💾 Hardsub {'☑️' if ((await db.get_hardsub(user_id)) is True) else ''} | 💾 Softsub {'☑️' if ((await db.get_subtitles(user_id)) is True) else ''}
 
 <b>©️ Watermark Settings</b>
-Metadata: {metadata}
-Video {'☑️' if ((await db.get_watermark(user_id)) is True) else ''}
+🎞 Metadata: {metadata}
+🎥 Video {'☑️' if ((await db.get_watermark(user_id)) is True) else ''}
 
 <b>🔊 Audio Settings</b>
-Codec: {audio}
-Sample Rate : {sample}
-Bit Rate: {bitrate}
-Channels: {channels}
+🔊 Codec: {audio}
+🔈Sample Rate : {sample}
+🎚 Bit Rate: {bitrate}
+〽️ Channels: {channels}
 '''
     await event.reply_text(vset)
